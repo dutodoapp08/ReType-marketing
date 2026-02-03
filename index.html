@@ -6,33 +6,48 @@
   <title>ReType — Track &amp; Train Your Personality Type</title>
   <meta name="description" content="ReType helps you track and train toward your desired MBTI type. Lightweight daily or weekly check-ins, trends, and coaching-style feedback." />
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
     :root { --fg:#0f172a; --muted:#475569; --bg:#ffffff; --card:#f8fafc; --border:#e2e8f0; }
+    html { overflow-x: hidden; }
     body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color:var(--fg); background:var(--bg); }
+      color:var(--fg); background:var(--bg); min-width: 0; overflow-x: hidden; }
     a { color:inherit; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 24px; }
-    .hero { padding: 28px 0 12px; display:grid; gap:18px; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 16px; min-width: 0; width: 100%; }
+    .hero { padding: 20px 0 12px; display:grid; gap:18px; grid-template-columns: 1fr; min-width: 0; }
+    .hero > div { min-width: 0; }
     .badge { display:inline-block; padding:6px 10px; border:1px solid var(--border); border-radius:999px; background:var(--card); font-size:12px; color:var(--muted); }
-    h1 { margin: 8px 0 0; font-size: 34px; line-height: 1.15; }
-    .sub { margin: 10px 0 0; font-size: 16px; color:var(--muted); line-height: 1.6; }
+    h1 { margin: 8px 0 0; font-size: 28px; line-height: 1.2; word-wrap: break-word; }
+    .sub { margin: 10px 0 0; font-size: 15px; color:var(--muted); line-height: 1.6; word-wrap: break-word; overflow-wrap: break-word; }
     .ctaRow { display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding: 12px 14px; border-radius:12px; border:1px solid var(--border); background:var(--card); text-decoration:none; font-weight:600; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding: 12px 14px; border-radius:12px; border:1px solid var(--border); background:var(--card); text-decoration:none; font-weight:600; font-size: 14px; white-space: nowrap; }
     .btn.primary { background: var(--fg); color: #fff; border-color: var(--fg); }
-    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; margin-top: 22px; }
-    .card { grid-column: span 12; border:1px solid var(--border); border-radius:16px; background: #fff; overflow:hidden; }
-    .card .inner { padding: 16px; }
-    .card h2 { margin:0; font-size: 18px; }
+    .grid { display:grid; grid-template-columns: 1fr; gap: 14px; margin-top: 22px; min-width: 0; }
+    .card { grid-column: 1 / -1; border:1px solid var(--border); border-radius:16px; background: #fff; overflow:hidden; min-width: 0; }
+    .card .inner { padding: 14px; min-width: 0; }
+    .card h2 { margin:0; font-size: 17px; }
     .card p { margin:8px 0 0; color:var(--muted); line-height: 1.6; }
-    .shots { display:grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 16px; background: var(--card); border-top: 1px solid var(--border); }
-    .shot { border:1px solid var(--border); border-radius:14px; background:#fff; overflow:hidden; }
-    .shot img { width:100%; height:auto; display:block; }
+    .shots { display:grid; grid-template-columns: 1fr; gap: 12px; padding: 12px; background: var(--card); border-top: 1px solid var(--border); min-width: 0; }
+    .shot { border:1px solid var(--border); border-radius:14px; background:#fff; overflow:hidden; min-width: 0; }
+    .shot img { width:100%; max-width:100%; height:auto; display:block; vertical-align: top; }
     .cap { padding: 10px 12px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); }
-    .twoCol { grid-column: span 12; display:grid; gap:14px; }
-    .cols { display:grid; gap:14px; grid-template-columns: 1fr; }
+    .twoCol { grid-column: 1 / -1; display:grid; gap:14px; min-width: 0; }
+    .cols { display:grid; gap:14px; grid-template-columns: 1fr; min-width: 0; }
+    .cols > .card { min-width: 0; }
     footer { margin-top: 28px; padding-top: 18px; border-top:1px solid var(--border); color:var(--muted); font-size: 13px; display:flex; gap:12px; flex-wrap:wrap; justify-content:space-between; }
+    @media (min-width: 480px) {
+      .shots { grid-template-columns: repeat(2, 1fr); }
+      .wrap { padding: 20px; }
+    }
+    @media (min-width: 640px) {
+      h1 { font-size: 32px; }
+      .card .inner { padding: 16px; }
+      .shots { padding: 16px; }
+    }
     @media (min-width: 860px) {
-      .hero { grid-template-columns: 1.2fr 0.8fr; align-items:center; }
+      .wrap { padding: 24px; }
+      .hero { grid-template-columns: 1.2fr 0.8fr; align-items:center; padding: 28px 0 12px; }
       .shots { grid-template-columns: repeat(3, 1fr); }
+      .grid { grid-template-columns: repeat(12, 1fr); }
       .twoCol { grid-column: span 12; }
       .cols { grid-template-columns: 1fr 1fr; }
       h1 { font-size: 40px; }
