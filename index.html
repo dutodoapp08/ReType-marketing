@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReType — Track &amp; Train Your Personality Type</title>
+  <meta name="description" content="ReType helps you track and train toward your desired MBTI type. Lightweight daily or weekly check-ins, trends, and coaching-style feedback." />
+  <style>
+    :root { --fg:#0f172a; --muted:#475569; --bg:#ffffff; --card:#f8fafc; --border:#e2e8f0; }
+    body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color:var(--fg); background:var(--bg); }
+    a { color:inherit; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 24px; }
+    .hero { padding: 28px 0 12px; display:grid; gap:18px; }
+    .badge { display:inline-block; padding:6px 10px; border:1px solid var(--border); border-radius:999px; background:var(--card); font-size:12px; color:var(--muted); }
+    h1 { margin: 8px 0 0; font-size: 34px; line-height: 1.15; }
+    .sub { margin: 10px 0 0; font-size: 16px; color:var(--muted); line-height: 1.6; }
+    .ctaRow { display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding: 12px 14px; border-radius:12px; border:1px solid var(--border); background:var(--card); text-decoration:none; font-weight:600; }
+    .btn.primary { background: var(--fg); color: #fff; border-color: var(--fg); }
+    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; margin-top: 22px; }
+    .card { grid-column: span 12; border:1px solid var(--border); border-radius:16px; background: #fff; overflow:hidden; }
+    .card .inner { padding: 16px; }
+    .card h2 { margin:0; font-size: 18px; }
+    .card p { margin:8px 0 0; color:var(--muted); line-height: 1.6; }
+    .shots { display:grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 16px; background: var(--card); border-top: 1px solid var(--border); }
+    .shot { border:1px solid var(--border); border-radius:14px; background:#fff; overflow:hidden; }
+    .shot img { width:100%; height:auto; display:block; }
+    .cap { padding: 10px 12px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); }
+    .twoCol { grid-column: span 12; display:grid; gap:14px; }
+    .cols { display:grid; gap:14px; grid-template-columns: 1fr; }
+    footer { margin-top: 28px; padding-top: 18px; border-top:1px solid var(--border); color:var(--muted); font-size: 13px; display:flex; gap:12px; flex-wrap:wrap; justify-content:space-between; }
+    @media (min-width: 860px) {
+      .hero { grid-template-columns: 1.2fr 0.8fr; align-items:center; }
+      .shots { grid-template-columns: repeat(3, 1fr); }
+      .twoCol { grid-column: span 12; }
+      .cols { grid-template-columns: 1fr 1fr; }
+      h1 { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <span class="badge">MBTI × Track &amp; Train</span>
+        <h1>ReType</h1>
+        <p class="sub">
+          <strong>Personality can change over time.</strong><br/>
+          ReType helps you track that change and grow into the person you want to be.
+          Answer short daily or weekly questions, see your type trends on the dashboard, and optionally train toward a target type with coaching-style feedback.
+        </p>
+        <div class="ctaRow">
+          <a class="btn primary" href="#" aria-label="Open on the App Store">View on App Store</a>
+          <a class="btn" href="../ReType-support/">Support</a>
+          <a class="btn" href="../ReType-legal/">Terms &amp; Privacy</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="inner">
+          <h2>How ReType works</h2>
+          <p>Set your baseline (know your type or take a short quiz) → choose Daily or Weekly → answer a few questions → see trends and Top-3 type. Optional: set a target type for training mode.</p>
+        </div>
+        <div class="shots">
+          <div class="shot">
+            <img src="images/dashboard_top.png" alt="Dashboard — Top type and trends" />
+            <div class="cap">Dashboard — Top type &amp; trends</div>
+          </div>
+          <div class="shot">
+            <img src="images/todays_question.png" alt="Today's questions" />
+            <div class="cap">Daily or weekly questions</div>
+          </div>
+          <div class="shot">
+            <img src="images/training.png" alt="Training mode" />
+            <div class="cap">Training mode (target type)</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="card twoCol">
+        <div class="inner">
+          <h2>Observation &amp; Training</h2>
+          <p>
+            In <strong>observation mode</strong>, ReType simply tracks how your type drifts over time.
+            In <strong>training mode</strong>, you pick a target MBTI type and get brief, coach-like feedback after each question to nudge your choices toward that type.
+          </p>
+        </div>
+        <div class="inner cols">
+          <div class="card" style="border-radius:14px;">
+            <div class="inner">
+              <h2>Dashboard &amp; axis trends</h2>
+              <p>See your Top-3 type and axis scores over time. Clean, lightweight visuals.</p>
+            </div>
+            <div class="shots" style="grid-template-columns:1fr;">
+              <div class="shot">
+                <img src="images/dashboard_axis.png" alt="Axis trend chart" />
+                <div class="cap">Axis trend chart</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="border-radius:14px;">
+            <div class="inner">
+              <h2>Goal &amp; training result</h2>
+              <p>Set a target type and see how your answers align with coaching feedback.</p>
+            </div>
+            <div class="shots" style="grid-template-columns:1fr;">
+              <div class="shot">
+                <img src="images/goal_setup.png" alt="Goal setup" />
+                <div class="cap">Goal (target type) setup</div>
+              </div>
+              <div class="shot">
+                <img src="images/training_result.png" alt="Training result" />
+                <div class="cap">Training result</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2026 ReType</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../ReType-support/">Support</a>
+        <a href="../ReType-legal/">Terms &amp; Privacy</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
